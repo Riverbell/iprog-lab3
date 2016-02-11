@@ -22,11 +22,12 @@ var DinnerModel = function() {
 			this._observers[i].update(arg);
 		}
 	}
-	
+
 
 	this.setNumberOfGuests = function(num) {
 		//TODO Lab 2
 		this.NumberOfGuests = num;
+		this.notifyObservers();
 	}
 
 	// should return 

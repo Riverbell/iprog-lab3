@@ -4,15 +4,17 @@ var DinnerOptionView = function (container, model) {
 	// Get all the relevant elements of the view (ones that show data
   	// and/or ones that responed to interaction)
 
-	var numberOfGuests = container.find("#numberOfGuests");
-	var menuContainer = container.find("#menuTable");
+	this.numberOfGuests = container.find("#numberOfGuests");
+	this.menuContainer = container.find("#menuTable");
+	this.plusButton = container.find("#plusGuest");
+	this.minusButton = container.find("#minusGuest");
 
 	// register to observe the model
 	// adds this to observer list in model
 	model.addObserver(this);
 
-	var loadView = function() {
-		numberOfGuests.html(model.getNumberOfGuests());
+	this.loadView = function() {
+		this.numberOfGuests.html(model.getNumberOfGuests());
 
 		var dinnerString = "<tr class='table-header'>"
 						+ "<td>Dish name</td>"
@@ -39,16 +41,16 @@ var DinnerOptionView = function (container, model) {
 						+"</td>"
 					+"</tr>";
 
-		menuContainer.html(dinnerString);
+		this.menuContainer.html(dinnerString);
 
 
 	}
 
 	this.update = function() {
-		loadView();
+		this.loadView();
 	}
 
-	loadView();
+	this.loadView();
 
 }
  
