@@ -59,6 +59,10 @@ h5 {
 	margin: 0;
 }
 
+.extraMargin {
+	margin-top: 15px;
+}
+
 
 /*
 * 	Index specific ========================
@@ -94,12 +98,17 @@ h5 {
 	overflow-y: auto;
 }
 
-.table-header {
-	background: #ddd;
-}
 
 td.border-top {
 	border-top: 1px solid black !important;
+}
+
+#menuTable tr {
+	color: #801515;
+}
+#menuTable tr.table-header {
+	color: black;
+	background: #ddd;
 }
 
 .dish-container {

@@ -4,21 +4,25 @@ var AllDishesView = function (container, model) {
 	// Get all the relevant elements of the view (ones that show data
   	// and/or ones that responed to interaction)
 
-	this.allDishes = container.find("#allDishes");
+	this.dishContainer = container.find("#allDishes");
+	this.currType = String(container.find("#dishType option:selected").val());
+	this.dishes = model.getAllDishes(this.currType);
 	
+	// register to observe the model
+	// adds this to observer list in model
+	model.addObserver(this);
+
 	// function that loads all the dishes
-	var loadDishes = function() {
-		this.currType = String(container.find("#dishType option:selected").val());
+	this.loadDishes = function() {
 		
 		//gets all dishes
-		var dishes = model.getAllDishes(this.currType);
 		//console.log(this.currType);
 
 		var dishString = " ";
 
 		// for each dish, add the info into the correct container
-		for (var i = 0; i < dishes.length; i++) {
-			var currentDish = dishes[i];
+		for (var i = 0; i < this.dishes.length; i++) {
+			var currentDish = this.dishes[i];
 			var dishDiv = "<div class='dish-container'><div class='dish-image'><img src='images/" 
 			+ String(currentDish.image) + "'/></div><div class='dish-name'>" + String(currentDish.name) 
 			+ "</div><div class='dish-info'>" + String(currentDish.description) + "</div></div>";
@@ -26,16 +30,14 @@ var AllDishesView = function (container, model) {
 		}
 		//console.log(dishString);
 
-		this.allDishes.html(dishString);
+		this.dishContainer.html(dishString);
 	}
 
-	// observer update function
-	// this is triggered by the model when there are changes
 	this.update = function() {
-		loadDishes();
+		this.loadDishes();
 	}
 
 	// load dishes on initialization
-	loadDishes();
+	this.loadDishes();
 }
  
