@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Dinner planner</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+
+		<!-- Our stylesheet -->
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<!-- full width container -->
+		<div id="exampleView" class="container-fluid">
+			<!-- full width row -->
+			<div id="header" class="row">
+				<h1>HOMELETTE <small> From the best chefs in the world directly into your kitchen</small></h1>
+			</div>
+			<div class="row">
+				<div class="col-md-12" id="myDinner">
+					<h3>My dinner: 4 people<button class="btn btn-primary" type="submit" style="float: right;">Go back and edit dinner</button></h3>
+				</div>
+			</div>
+			<div class="col-md-12" align="center">
+				<div class="allDishes row">
+					<div class="dish-container">
+						<div class="dish-image">
+							<img src="images/toast.jpg"/>
+						</div>
+						<div class="dish-name">
+							Toast
+						</div>
+						<div class="dish-price">
+							77.20 SEK
+						</div>
+					</div>
+					<div class="dish-container">
+						<div class="dish-image">
+							<img src="images/meatballs.jpg"/>
+						</div>
+						<div class="dish-name">
+							Meatballs
+						</div>
+						<div class="dish-price">
+							180.60 SEK
+						</div>
+					</div>
+					<div class="dish-container">
+						<div class="dish-image">
+							<img src="images/icecream.jpg">
+						</div>
+						<div class="dish-name">
+							Ice Cream
+						</div>
+						<div class="dish-price">
+							83.40 SEK
+						</div>
+					</div>
+					<div class="dish-container verticalLine">
+						<div class="dish-price leftAlignPrice">
+							Total: <br/>
+							341.20 SEK
+						</div>
+					</div>
+					<div class="horizontalLine">
+					</div>
+					<div class="horizontalLinePlacing">
+						<button class="btn btn-primary" type="submit">Print Full Recipe</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	</html>
