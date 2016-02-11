@@ -17,9 +17,9 @@ var DinnerModel = function() {
 
 	// notify the observer
 	// calls the update method on all the observers in the list
-	this.notifyObservers = function (arg) {
-		for (var i = 0; i < this._observers .length; i++) {
-			this._observers[i].update(arg);
+	this.notifyObservers = function () {
+		for (var i = 0; i < this._observers.length; i++) {
+			this._observers[i].update();
 		}
 	}
 

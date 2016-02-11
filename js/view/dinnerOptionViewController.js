@@ -10,4 +10,8 @@ var DinnerOptionViewController = function(view, model) {
 		console.log("minus click")
 		model.setNumberOfGuests(model.getNumberOfGuests() - 1);
 	});
+
+	view.confirmButton.click(function(){
+		//some shizz
+	});
 }

@@ -8,10 +8,13 @@ var DinnerOptionView = function (container, model) {
 	this.menuContainer = container.find("#menuTable");
 	this.plusButton = container.find("#plusGuest");
 	this.minusButton = container.find("#minusGuest");
+	this.confirmButton = container.find("#confirmDinner");
 
+	//model.setNumberOfGuests(Number(this.numberOfGuests.text()));
 	// register to observe the model
 	// adds this to observer list in model
 	model.addObserver(this);
+
 
 	this.loadView = function() {
 		this.numberOfGuests.html(model.getNumberOfGuests());
