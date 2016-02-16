@@ -35,7 +35,7 @@
 		<!-- 
 	  		dinnerOptionView ====================================
 	  	-->
-		<div class="col-md-2" id="dinnerOptionView">
+		<div class="col-md-2" id="dinnerOptionView" style="display:none">
 			<h5>My Dinner</h5>
 			<p>
 				People: <span id="numberOfGuests">4</span> 
@@ -69,7 +69,7 @@
 		<!-- 
 	  		allDishesView ====================================
 	  	-->
-	  	<div class="col-md-10" id="allDishesView">
+	  	<div class="col-md-10" id="allDishesView" style="display:none">
 				<div class="col-md-12" id="searchField">
 					<h4>Select dish</h4>
 					<form action="" id="selectDish" class="form-inline">
@@ -168,8 +168,105 @@
 			</div>
 		</div> <!-- end dishinfoview -->
 
-	</div> <!-- end wrapper -->
+		<!-- 
 
+		fullMenuView ====================================
+		
+		-->
+		<div id="fullMenuView" style="display:none">
+				<div class="row">
+					<div class="col-md-12" id="myDinner">
+						<h3>My dinner: 4 people<button class="btn btn-primary" type="submit" style="float: right;">Go back and edit dinner</button></h3>
+					</div>
+				</div>
+				<div class="row one" id="menuDishes">
+					<div class="col-md-6 halfPageContainer">
+						<div class="col-md-3 dish-image">
+							<img src="images/toast.jpg">
+						</div>
+						<div class="col-md-8">
+							<h2 class="noMargin dishHeaderPadding">TOAST</h2>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae lorem nunc. Ut tempus eros sit amet arcu rhoncus tempor. Pellentesque gravida dolor vitae lobortis gravida. Nunc aliquet pulvinar mauris et congue. Ut id laoreet dui. Sed metus justo, pharetra at diam sit amet, fringilla tincidunt augue. Aenean in felis in nisl mattis volutpat at ut sapien. Curabitur lorem velit, aliquam eget diam vitae, aliquam viverra libero.
+							</p>
+						</div>
+					</div>
+					<div class="col-md-6 halfPageContainer">
+						<div class="col-md-9">
+							<h5 class="extraMargin dishHeaderPadding">PREPARATION</h5>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae lorem nunc. Ut tempus eros sit amet arcu rhoncus tempor. Pellentesque gravida dolor vitae lobortis gravida. Nunc aliquet pulvinar mauris et congue. Ut id laoreet dui. Sed metus justo, pharetra at diam sit amet, fringilla tincidunt augue. 
+								<br/>
+								<br/>
+								Aenean in felis in nisl mattis volutpat at ut sapien. Curabitur lorem velit, aliquam eget diam vitae, aliquam viverra libero. Nam quis velit fringilla, tempus enim nec, scelerisque odio. Mauris interdum lacus porta mauris convallis, eu ultrices dui sagittis.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div> <!-- end dullMenuView -->
+
+			<!-- 
+
+			dinnerOverviewView ===========================
+
+			-->
+			<div id ="dinnerOverviewView">
+				<div class="row">
+					<div class="col-md-12" id="myDinner">
+						<h3>My dinner: 4 people<button class="btn btn-primary" type="submit" style="float: right;" onclick="window.history.go(-1); return false;">Go back and edit dinner</button></h3>
+					</div>
+				</div>
+				<div class="col-md-12" align="center" id="menuOverview">
+					<div class="row">
+						<div class="dish-container">
+							<div class="dish-image">
+								<img src="images/toast.jpg"/>
+							</div>
+							<div class="dish-name">
+								Toast
+							</div>
+							<div class="dish-price">
+								77.20 SEK
+							</div>
+						</div>
+						<div class="dish-container">
+							<div class="dish-image">
+								<img src="images/toast.jpg"/>
+							</div>
+							<div class="dish-name">
+								Toast
+							</div>
+							<div class="dish-price">
+								77.20 SEK
+							</div>
+						</div>
+						<div class="dish-container">
+							<div class="dish-image">
+								<img src="images/toast.jpg"/>
+							</div>
+							<div class="dish-name">
+								Toast
+							</div>
+							<div class="dish-price">
+								77.20 SEK
+							</div>
+						</div>
+						<div class="dish-container verticalLine">
+							<div class="dish-price leftAlignPrice">
+								Total: <br/>
+								341.20 SEK
+							</div>
+						</div>
+						<div class="horizontalLine">
+						</div>
+						<div class="horizontalLinePlacing">
+							<button class="btn btn-primary" type="submit">Print Full Recipe</button>
+						</div>
+					</div>
+				</div>
+			</div> <!-- end dinnerOverviewView -->
+
+	</div> <!-- end wrapper -->
 
 
     <!-- jQuery -->
