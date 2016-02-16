@@ -17,4 +17,6 @@ $(function() {
 	var fullMenuView = new FullMenuView($("#fullMenuView"), model);
 
 	var dinnerOverviewView = new DinnerOverviewView($("#dinnerOverviewView"), model);
+
+	var overallController = new OverallController(indexView, dinnerOptionView, allDishesView, dishInfoView, fullMenuView, dinnerOverviewView, model);
 });

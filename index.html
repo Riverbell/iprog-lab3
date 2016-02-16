@@ -21,7 +21,7 @@
 	  	<!-- 
 	  		indexView ====================================
 	  	-->
-		<div class="row" id="indexView" style="display:none;">
+		<div class="row" id="indexView">
 			<div class="col-md-6 intro-text">
 				<h3>A Home Dinner Service</h3>
 				<p>
@@ -210,7 +210,7 @@
 			dinnerOverviewView ===========================
 
 			-->
-			<div id ="dinnerOverviewView">
+			<div id ="dinnerOverviewView" style="display:none;">
 				<div class="row">
 					<div class="col-md-12" id="myDinner">
 						<h3>My dinner: 4 people<button class="btn btn-primary" type="submit" style="float: right;" onclick="window.history.go(-1); return false;">Go back and edit dinner</button></h3>
@@ -285,6 +285,6 @@
 	<script src="js/view/dishInfoView.js"></script>
 	<script src="js/view/fullMenuView.js"></script>
 	<script src="js/view/dinnerOverviewView.js"></script>
-	
+	<script src="js/view/overallController.js"></script>
   </body>
 </html>
