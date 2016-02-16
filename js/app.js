@@ -5,9 +5,9 @@ $(function() {
 	
 	//And create the needed controllers and views
 	var indexView = new IndexView($("#indexView"), model);
+	var indexViewController = new IndexViewController(indexView,model);
 
 	var dinnerOptionView = new DinnerOptionView($("#dinnerOptionView"), model);
-	
 	var dinnerOptionViewController = new DinnerOptionViewController(dinnerOptionView,model);
 
 	var allDishesView = new AllDishesView($("#allDishesView"), model);
