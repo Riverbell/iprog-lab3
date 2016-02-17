@@ -1,5 +1,5 @@
 //ExampleViewController Object constructor
-var DinnerOptionViewController = function(view, model) {
+var DinnerOptionViewController = function(view, model, overallController) {
  
 	view.plusButton.click(function(){
 		console.log("plus click");
@@ -12,6 +12,7 @@ var DinnerOptionViewController = function(view, model) {
 	});
 
 	view.confirmButton.click(function(){
-		//some shizz
+		overallController.confirmDinner()
+
 	});
 }

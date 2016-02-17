@@ -11,17 +11,28 @@ var OverallController = function(indexView, dinnerOptionView, allDishesView, dis
 	this.dinnerOverviewView = dinnerOverviewView; 
 	this.model = model;
 
+
 	this.hideView = function(view) {
 		view.container.hide();
 	}
 
-	this.showView = function(view) {}
-
+	this.showView = function(view) {
+		view.container.show();
+	}
 	// index -> selectDish
 	//behöver ingen input
 	// ska hidea indexView???
 	// ska visa dinnerOptionView och allDishesView
+
 	this.createDinner = function(view) {
 		this.hideView(this.indexView);
+		this.showView(this.dinnerOptionView);
+		this.showView(this.allDishesView);
+	}
+
+	this.confirmDinner = function(view) {
+		this.hideView(this.dinnerOptionView);
+		this.hideView(this.allDishesView);
+		this.showView(this.dinnerOverviewView);
 	}
 }
