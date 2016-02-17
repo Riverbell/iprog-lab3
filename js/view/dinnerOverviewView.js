@@ -1,6 +1,7 @@
 
 var DinnerOverviewView = function (container, model) {
-
+	
+	this.container = container;
 	this.menuOverview = container.find("#menuOverview");
 
 	//get all the dishes on the menu, returns the dish-object

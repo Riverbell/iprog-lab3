@@ -1,6 +1,8 @@
 //ExampleView Object constructor
 var DinnerOptionView = function (container, model) {
 	
+	this.container = container;
+
 	// Get all the relevant elements of the view (ones that show data
   	// and/or ones that responed to interaction)
 
@@ -13,6 +15,7 @@ var DinnerOptionView = function (container, model) {
 	//model.setNumberOfGuests(Number(this.numberOfGuests.text()));
 	// register to observe the model
 	// adds this to observer list in model
+	
 	model.addObserver(this);
 
 

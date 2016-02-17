@@ -1,6 +1,7 @@
 
 var FullMenuView = function (container, model) {
 
+	this.container = container;
 	this.menuDishes = container.find("#menuDishes");
 
 	//get all the dishes on the menu, returns the dish-objects
