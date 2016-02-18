@@ -4,6 +4,7 @@ var DishInfoView = function (container, model) {
 	// Get all the relevant elements of the view (ones that show data
   	// and/or ones that responed to interaction)
 
+	this.container = container;
 	this.dishName = container.find("#dishName");
 	this.dishImage = container.find("#dishImage");
 	this.dishInfo = container.find("#dishInfo");
@@ -11,13 +12,13 @@ var DishInfoView = function (container, model) {
 
 	var id = 1;
 
-	dish = model.getDish(id);
 
 	// register to observe the model
 	// adds this to observer list in model
 	model.addObserver(this);
 
-	this.loadIngredientList = function() {
+	this.loadIngredientList = function(id) {
+		dish = model.getDish(id);
 		//update containers with data
 		this.dishName.html(String(dish.name));
 		this.dishImage.html("<img src='images/" + String(dish.image) + "'/>");
@@ -54,10 +55,10 @@ var DishInfoView = function (container, model) {
 		this.ingredientTable.html(ingredientList);
 	}
 
-	this.update = function() {
-		this.loadIngredientList();
+	this.update = function(id) {
+		this.loadIngredientList(id);
 	}
 
-	this.loadIngredientList();
+	this.loadIngredientList(id);
 }
  
