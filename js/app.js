@@ -20,5 +20,9 @@ $(function() {
 	
 	var dinnerOptionViewController = new DinnerOptionViewController(dinnerOptionView, model, overallController);
 	
+	var fullMenuViewController = new FullMenuViewController(fullMenuView, model, overallController);
+
+	var dinnerOverViewController = new DinnerOverviewViewController(dinnerOverviewView, model, overallController);
+	
 	var indexViewController = new IndexViewController(indexView, model, overallController);
 });

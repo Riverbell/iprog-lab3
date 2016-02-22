@@ -24,15 +24,42 @@ var OverallController = function(indexView, dinnerOptionView, allDishesView, dis
 	// ska hidea indexView???
 	// ska visa dinnerOptionView och allDishesView
 
-	this.createDinner = function(view) {
+	this.createDinner = function() {
 		this.hideView(this.indexView);
 		this.showView(this.dinnerOptionView);
 		this.showView(this.allDishesView);
 	}
 
-	this.confirmDinner = function(view) {
+	this.confirmDinner = function() {
 		this.hideView(this.dinnerOptionView);
 		this.hideView(this.allDishesView);
 		this.showView(this.dinnerOverviewView);
 	}
+
+	this.editDinner = function() {
+		this.hideView(fullMenuView);
+		this.hideView(dinnerOverviewView);
+		this.showView(allDishesView);
+		this.showView(dinnerOptionView);
+		//"gå tillbaka till" hide and seek selectDish-view.
+	}
+
+	this.printDinner = function() {
+		console.log("in overallController");
+		//this.hideView(this.dinnerOverviewView);
+		this.showView(this.fullMenuView);
+		//gå vidare till dinnerPreparation-view.
+	}
+
+	this.dishInfo = function() {
+		this.hideView();
+		//när klickat på en dish, kom till infodish-view.
+	}
+
+	this.confirmDish = function() {
+		//när en valt en rätt, kom tillbaka till selectDish-view
+		//lägg till dish i menu (kanske i "vanliga" controllern)
+	}
+
+
 }
