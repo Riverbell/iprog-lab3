@@ -176,7 +176,7 @@
 		<div id="fullMenuView" style="display:none">
 				<div class="row">
 					<div class="col-md-12" id="myDinner">
-						<h3>My dinner: 4 people<button class="btn btn-primary" type="submit" style="float: right;">Go back and edit dinner</button></h3>
+						<h3>My dinner: <button class="btn btn-primary" id="goBack" type="submit" style="float: right;">Go back and edit dinner</button></h3>
 					</div>
 				</div>
 				<div class="row one" id="menuDishes">
@@ -203,7 +203,7 @@
 						</div>
 					</div>
 				</div>
-			</div> <!-- end dullMenuView -->
+			</div> <!-- end fullMenuView -->
 
 			<!-- 
 
@@ -213,7 +213,7 @@
 			<div id ="dinnerOverviewView" style="display:none;">
 				<div class="row">
 					<div class="col-md-12" id="myDinner">
-						<h3>My dinner: 4 people<button class="btn btn-primary" type="submit" style="float: right;" onclick="window.history.go(-1); return false;">Go back and edit dinner</button></h3>
+						<h3>My dinner: <button class="btn btn-primary" id="goBack" type="submit" style="float: right;">Go back and edit dinner</button></h3>
 					</div>
 				</div>
 				<div class="col-md-12" align="center" id="menuOverview">
@@ -260,7 +260,7 @@
 						<div class="horizontalLine">
 						</div>
 						<div class="horizontalLinePlacing">
-							<button class="btn btn-primary" type="submit">Print Full Recipe</button>
+							<button class="btn btn-primary" id="goButton" type="submit">Print Full Recipe</button>
 						</div>
 					</div>
 				</div>
@@ -284,7 +284,9 @@
 	<script src="js/view/allDishesView.js"></script>
 	<script src="js/view/dishInfoView.js"></script>
 	<script src="js/view/fullMenuView.js"></script>
+	<script src="js/view/fullMenuViewController.js"></script>
 	<script src="js/view/dinnerOverviewView.js"></script>
+	<script src="js/view/dinnerOverviewViewController.js"></script>
 	<script src="js/view/overallController.js"></script>
   </body>
 </html>
