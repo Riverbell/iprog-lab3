@@ -18,4 +18,5 @@ $(function() {
 	var dinnerOverViewController = new DinnerOverviewViewController(dinnerOverviewView, model, overallController);
 	var indexViewController = new IndexViewController(indexView, model, overallController);
 	var allDishesViewController = new AllDishesController(allDishesView, model, overallController);
+	var dishInfoViewController = new DishInfoViewController(dishInfoView, model, overallController);
 });
