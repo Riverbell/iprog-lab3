@@ -62,6 +62,8 @@ var OverallController = function(indexView, dinnerOptionView, allDishesView, dis
 	}
 
 	this.confirmDish = function() {
+		this.hideView(this.dishInfoView);
+		this.showView(this.allDishesView);
 		//när en valt en rätt, kom tillbaka till selectDish-view
 		//lägg till dish i menu (kanske i "vanliga" controllern)
 	}
