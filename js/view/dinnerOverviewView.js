@@ -4,17 +4,15 @@ var DinnerOverviewView = function (container, model) {
 	this.container = container;
 	this.myDinner = container.find("#myDinner");
 	this.menuOverview = container.find("#menuOverview");
-	this.backButton = this.myDinner.find("#goBack");
-	this.printButton = this.menuOverview.find("#goButton");	
+	this.numberOfGuests = container.find("#dinnerGuests");
+	this.backButton = container.find("#goBack");
+	this.printButton = container.find("#goButton");	
 	
 	var guests = model.getNumberOfGuests();
 
-	var guestNumber = "<h3>My dinner: " + String(guests)
-							+ "<button class='btn btn-primary' id='goBack' type='submit' style='float: right;'>Go back and edit dinner"
-							+ "</button>"
-						+ "</h3>";
+	var guestNumber = String(guests);
 
-	this.myDinner.html(guestNumber);
+	this.numberOfGuests.html(guestNumber);
 
 	//get all the dishes on the menu, returns the dish-object
 	
@@ -53,10 +51,6 @@ var DinnerOverviewView = function (container, model) {
 
 	var extraDiv = "<div class='dish-container verticalLine'>"
 						+ "<div class='dish-price leftAlignPrice'>Total: <br/>" +  String(totalPrice) + " SEK</div>"
-					+ "</div>"
-					+ "<div class='horizontalLine'></div>"
-					+ "<div class='horizontalLinePlacing'>"
-						+ "<button class='btn btn-primary' type='submit'>Print Full Recipe</button>"
 					+ "</div>";
 	
 	dishString = dishString + extraDiv;

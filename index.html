@@ -176,7 +176,7 @@
 		<div id="fullMenuView" style="display:none">
 				<div class="row">
 					<div class="col-md-12" id="myDinner">
-						<h3>My dinner: <button class="btn btn-primary" id="goBack" type="submit" style="float: right;">Go back and edit dinner</button></h3>
+						<h3>My dinner: <span id="dinnerGuests"></span><button class="btn btn-primary" id="goBack" type="submit" style="float: right;">Go back and edit dinner</button></h3>
 					</div>
 				</div>
 				<div class="row one" id="menuDishes">
@@ -213,56 +213,18 @@
 			<div id ="dinnerOverviewView" style="display:none;">
 				<div class="row">
 					<div class="col-md-12" id="myDinner">
-						<h3>My dinner: <button class="btn btn-primary" id="goBack" type="submit" style="float: right;">Go back and edit dinner</button></h3>
+						<h3>My dinner: <span id="dinnerGuests"></span><button class="btn btn-primary" id="goBack" type="submit" style="float: right;">Go back and edit dinner</button></h3>
 					</div>
 				</div>
-				<div class="col-md-12" align="center" id="menuOverview">
-					<div class="row">
-						<div class="dish-container">
-							<div class="dish-image">
-								<img src="images/toast.jpg"/>
-							</div>
-							<div class="dish-name">
-								Toast
-							</div>
-							<div class="dish-price">
-								77.20 SEK
-							</div>
-						</div>
-						<div class="dish-container">
-							<div class="dish-image">
-								<img src="images/toast.jpg"/>
-							</div>
-							<div class="dish-name">
-								Toast
-							</div>
-							<div class="dish-price">
-								77.20 SEK
-							</div>
-						</div>
-						<div class="dish-container">
-							<div class="dish-image">
-								<img src="images/toast.jpg"/>
-							</div>
-							<div class="dish-name">
-								Toast
-							</div>
-							<div class="dish-price">
-								77.20 SEK
-							</div>
-						</div>
-						<div class="dish-container verticalLine">
-							<div class="dish-price leftAlignPrice">
-								Total: <br/>
-								341.20 SEK
-							</div>
-						</div>
-						<div class="horizontalLine">
+				<div class="row" align="center" id="menuOverview">
+					
+				</div>
+				<div class="row print-recipe-container">
+					<div class="horizontalLine">
 						</div>
 						<div class="horizontalLinePlacing">
 							<button class="btn btn-primary" id="goButton" type="submit">Print Full Recipe</button>
 						</div>
-					</div>
 				</div>
 			</div> <!-- end dinnerOverviewView -->
 
