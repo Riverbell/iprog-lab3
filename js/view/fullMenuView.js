@@ -11,11 +11,12 @@ var FullMenuView = function (container, model) {
 	// adds this to observer list in model
 	model.addObserver(this);
 
-	var guests = model.getNumberOfGuests();
-
-	var guestNumber = String(guests);
+	
 
 	this.loadView = function(){
+		var guests = model.getNumberOfGuests();
+
+		var guestNumber = String(guests);
 		this.numberOfGuests.html(guestNumber);
 		
 		//get all the dishes on the menu, returns the dish-objects
