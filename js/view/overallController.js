@@ -37,6 +37,7 @@ var OverallController = function(indexView, dinnerOptionView, allDishesView, dis
 	this.confirmDinner = function() {
 		this.hideView(this.dinnerOptionView);
 		this.hideView(this.allDishesView);
+		this.hideView(this.dishInfoView);
 		this.showView(this.dinnerOverviewView);
 	}
 
