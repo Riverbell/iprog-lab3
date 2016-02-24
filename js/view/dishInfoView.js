@@ -9,6 +9,8 @@ var DishInfoView = function (container, model) {
 	this.dishImage = container.find("#dishImage");
 	this.dishInfo = container.find("#dishInfo");
 	this.ingredientTable = container.find("#ingredientTable");
+	this.dishConfirmButton = container.find("#confirmDish");
+	this.dishID = "";
 
 	var id = 1;
 
@@ -20,6 +22,7 @@ var DishInfoView = function (container, model) {
 	this.loadIngredientList = function(id) {
 		dish = model.getDish(id);
 		//update containers with data
+		this.dishID = id;
 		this.dishName.html(String(dish.name));
 		this.dishImage.html("<img src='images/" + String(dish.image) + "'/>");
 		this.dishInfo.html(String(dish.description));
@@ -45,7 +48,6 @@ var DishInfoView = function (container, model) {
 
 		ingredientList = ingredientList + "<tr>"
 							+ "<td colspan='2' class='border-top'>"
-								+ "<button class='btn btn-primary btn-sm'>Confirm dish</button>"
 							+ "</td>"
 							+ "<td class='border-top'>SEK</td>"
 							+ "<td class='total border-top' id='totalPrice'>" + String(model.getDishPrice(dish.id)) + "</td>"
