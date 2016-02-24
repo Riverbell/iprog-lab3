@@ -52,8 +52,8 @@ var OverallController = function(indexView, dinnerOptionView, allDishesView, dis
 	}
 
 	this.printDinner = function() {
-		console.log("in overallController");
 		this.hideView(this.dinnerOverviewView);
+		this.updateView(this.fullMenuView);
 		this.showView(this.fullMenuView);
 		//gå vidare till dinnerPreparation-view.
 	}
