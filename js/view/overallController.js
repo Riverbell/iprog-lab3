@@ -38,6 +38,7 @@ var OverallController = function(indexView, dinnerOptionView, allDishesView, dis
 		this.hideView(this.dinnerOptionView);
 		this.hideView(this.allDishesView);
 		this.hideView(this.dishInfoView);
+		this.updateView(this.dinnerOverviewView);
 		this.showView(this.dinnerOverviewView);
 	}
 
