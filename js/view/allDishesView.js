@@ -6,17 +6,18 @@ var AllDishesView = function (container, model) {
 
 	this.container = container;
 	this.dishContainer = container.find("#allDishes");
-	this.currType = String(container.find("#dishType option:selected").val());
-	this.dishes = model.getAllDishes(this.currType);
-
+	this.dishTypeSelect = container.find("#dishType");
+	this.searchField = container.find("#keywords");
+	this.searchButton = container.find("#searchDishButton");
 	
 	// register to observe the model
 	// adds this to observer list in model
 	model.addObserver(this);
 
 	// function that loads all the dishes
-	this.loadDishes = function() {
-		
+	this.loadDishes = function(searchWord) {
+		this.currType = String(container.find("#dishType option:selected").val());
+		this.dishes = model.getAllDishes(this.currType, searchWord);
 		//gets all dishes
 		//console.log(this.currType);
 
@@ -41,8 +42,10 @@ var AllDishesView = function (container, model) {
 
 	}
 
-	this.update = function() {
-		this.loadDishes();
+	this.update = function(searchWord) {
+		//empties the dishcontainer before loading new dishes
+		this.dishContainer.empty();
+		this.loadDishes(searchWord);
 	}
 
 	// load dishes on initialization

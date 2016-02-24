@@ -9,6 +9,26 @@ var AllDishesController = function(view, model, overallController) {
 	    overallController.selectedDish(this.id);
 	});
 
+ 	// när dishtype ändras
+ 	view.dishTypeSelect.change(function() {
+ 		//uppdaterar viewn, med det nya värdet
+ 		// kollar om det finns ett sökvärde
+ 		if( view.searchField.val() ) {
+ 			view.update(view.searchField.val());
+ 		} else {
+ 			view.update();
+ 		}
+ 	});
+
+ 	view.searchButton.click(function(){
+ 		// om det finns något värde i sökfältet
+ 		// uppdateras viewen med sökordet
+ 		if( view.searchField.val() ) {
+ 			view.update(view.searchField.val());
+ 		} else {
+ 			view.update();
+ 		}
+ 	});
  
 
 }
