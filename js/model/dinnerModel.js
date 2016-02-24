@@ -3,7 +3,7 @@ var DinnerModel = function() {
 	//TODO Lab 2 implement the data structure that will hold number of guest
 	// and selected dinner options for dinner menu
 
-	this.menu = [1, 100, 200];
+	this.menu = [null, null, null];
 	this.NumberOfGuests = 1;
 	//tanken är att id läggs in på varje rätt
 
@@ -19,6 +19,7 @@ var DinnerModel = function() {
 	// calls the update method on all the observers in the list
 	this.notifyObservers = function () {
 		for (var i = 0; i < this._observers.length; i++) {
+			//console.log("Observer:",this._observers[i]);
 			this._observers[i].update();
 		}
 	}
@@ -59,7 +60,9 @@ var DinnerModel = function() {
 
     	for (var i = 0; i < this.menu.length; i++) {
       		//if we want to return objects
-      		fullMenu.push(this.getDish(this.menu[i]));
+      		if ( this.menu[i] != null ) {
+      			fullMenu.push(this.getDish(this.menu[i]));
+      		}
       
       		//if we want to return dish-id
       		//fullMenu.push(this.menu[i]);
@@ -99,13 +102,15 @@ var DinnerModel = function() {
 	    var menuPrice = 0;
 	    for (var i = 0; i < this.menu.length; i++) {
 	      	//get the current dish in the menu
-	      	var currentDish = this.getDish(this.menu[i]);
-	        
-	        //for each ingredient, add price to menuPrice
-	        var ingredientLength = currentDish.ingredients.length;
-	        for (var j=0; j < ingredientLength; j++) {
-	          menuPrice = menuPrice + currentDish.ingredients[j].price;
-	        }        
+	      	if ( this.menu[i] != null ) {
+		      	var currentDish = this.getDish(this.menu[i]);
+		        
+		        //for each ingredient, add price to menuPrice
+		        var ingredientLength = currentDish.ingredients.length;
+		        for (var j=0; j < ingredientLength; j++) {
+		          menuPrice = menuPrice + currentDish.ingredients[j].price;
+		        }        
+	    	}
 	      
 	    }
     
