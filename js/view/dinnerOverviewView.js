@@ -23,7 +23,6 @@ var DinnerOverviewView = function (container, model) {
 		//get all the dishes on the menu, returns the dish-object
 		
 		var dishes = model.getFullMenu();
-		console.log(dishes);
 
 		var dishString = " ";
 		var dishPrices = [];
@@ -34,6 +33,7 @@ var DinnerOverviewView = function (container, model) {
 		
 			// create part of dishString that will contain the values wanted for each dish
 			var currentDishPrice = model.getDishPrice(currentDish.id);
+			currentDishPrice = currentDishPrice * guests;
 			dishPrices.push(currentDishPrice);
 			var dishDiv = "<div class='dish-container'>"
 							+ "<div class='dish-image'>"
@@ -58,7 +58,7 @@ var DinnerOverviewView = function (container, model) {
 
 		var extraDiv = "<div class='dish-container verticalLine'>"
 							+ "<div class='dish-price leftAlignPrice'>Total: <br/>" +  String(totalPrice) + " SEK</div>"
-						+ "</div>";
+					+ "</div>";
 		
 		dishString = dishString + extraDiv;
 

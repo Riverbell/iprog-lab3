@@ -20,7 +20,8 @@ var DinnerOptionView = function (container, model) {
 
 
 	this.loadView = function() {
-		this.numberOfGuests.html(model.getNumberOfGuests());
+		var guests = model.getNumberOfGuests();
+		this.numberOfGuests.html(guests);
 
 		var dinnerString = "<tr class='table-header'>"
 						+ "<td>Dish name</td>"
@@ -31,7 +32,7 @@ var DinnerOptionView = function (container, model) {
 			for (var i = 0; i < menu.length; i++) {
 				var dish = "<tr>"
 							+ "<td>" + String(menu[i].name) + "</td>"
-							+ "<td class='right-align'>" + String(model.getDishPrice(menu[i].id)) + "</td>"
+							+ "<td class='right-align'>" + String(model.getDishPrice(menu[i].id)*guests) + "</td>"
 						+ "</tr>";
 
 				dinnerString = dinnerString + dish;
