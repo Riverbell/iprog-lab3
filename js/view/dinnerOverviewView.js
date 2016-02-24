@@ -7,6 +7,10 @@ var DinnerOverviewView = function (container, model) {
 	this.numberOfGuests = container.find("#dinnerGuests");
 	this.backButton = container.find("#goBack");
 	this.printButton = container.find("#goButton");	
+
+	// register to observe the model
+	// adds this to observer list in model
+	model.addObserver(this);
 	
 	var guests = model.getNumberOfGuests();
 
@@ -18,6 +22,7 @@ var DinnerOverviewView = function (container, model) {
 		//get all the dishes on the menu, returns the dish-object
 		
 		var dishes = model.getFullMenu();
+		console.log(dishes);
 
 		var dishString = " ";
 		var dishPrices = [];
