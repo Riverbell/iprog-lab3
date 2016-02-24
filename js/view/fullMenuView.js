@@ -2,8 +2,19 @@
 var FullMenuView = function (container, model) {
 
 	this.container = container;
+	this.myDinner = container.find("#myDinner");
 	this.menuDishes = container.find("#menuDishes");
+	this.backButton = container.find("#goBack")
 
+	var guests = model.getNumberOfGuests();
+
+	var guestNumber = "<h3>My dinner: " + String(guests)
+							+ "<button class='btn btn-primary' id='goBack' type='submit' style='float: right;'>Go back and edit dinner"
+							+ "</button>"
+						+ "</h3>";
+
+	this.myDinner.html(guestNumber);
+	
 	//get all the dishes on the menu, returns the dish-objects
 	var dishes = model.getFullMenu();
 	var dishString = " ";
