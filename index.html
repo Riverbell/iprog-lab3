@@ -129,6 +129,7 @@
 		<div class="col-md-10" id="dishInfoView" style="display:none;">
 			<div class="col-md-6">
 				<h2 id="dishName">Toast</h2>
+				<span id="dishID" ></span>
 				<div id="dishImage">
 					<img src="images/toast.jpg"/>
 				</div>
@@ -152,14 +153,12 @@
 					</tr>
 					<tr>
 						<td colspan="2" class="border-top">
-							<button class="btn btn-primary btn-sm" id="dishConfirm">Confirm dish</button>
 						</td>
 						<td class="border-top">SEK</td>
 						<td class="total border-top">77</td>
 					</tr>
 				</table>
-
-				
+				<button class="btn btn-primary btn-sm right-align" id="confirmDish">Confirm dish</button>
 			</div>
 
 			<div class="col-md-12">
@@ -246,6 +245,7 @@
 	<script src="js/view/allDishesView.js"></script>
 	<script src="js/view/allDishesController.js"></script>
 	<script src="js/view/dishInfoView.js"></script>
+	<script src="js/view/dishInfoViewController.js"></script>
 	<script src="js/view/fullMenuView.js"></script>
 	<script src="js/view/fullMenuViewController.js"></script>
 	<script src="js/view/dinnerOverviewView.js"></script>
