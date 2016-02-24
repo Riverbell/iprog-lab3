@@ -27,26 +27,27 @@ var DinnerOptionView = function (container, model) {
 						+ "<td class='right-align'>Cost</td>"
 					+ "</tr>";
 		var menu = model.getFullMenu();
+		if ( menu != [] ) {
+			for (var i = 0; i < menu.length; i++) {
+				var dish = "<tr>"
+							+ "<td>" + String(menu[i].name) + "</td>"
+							+ "<td class='right-align'>" + String(model.getDishPrice(menu[i].id)) + "</td>"
+						+ "</tr>";
 
-		for (var i = 0; i < menu.length; i++) {
-			var dish = "<tr>"
-						+ "<td>" + String(menu[i].name) + "</td>"
-						+ "<td class='right-align'>" + String(model.getDishPrice(menu[i].id)) + "</td>"
-					+ "</tr>";
+				dinnerString = dinnerString + dish;
+			}
 
-			dinnerString = dinnerString + dish;
+			dinnerString = dinnerString + "<tr>"
+							+"<td>Pending</td>"
+							+"<td class='right-align'>0.00</td>"
+						+"</tr>"
+						+"<tr class='right-align'>"
+							+"<td colspan='2' class='border-top'>"
+								+"SEK <span id='totalCost'>" + String(model.getTotalMenuPrice()) + "</span>"
+							+"</td>"
+						+"</tr>";
+
 		}
-
-		dinnerString = dinnerString + "<tr>"
-						+"<td>Pending</td>"
-						+"<td class='right-align'>0.00</td>"
-					+"</tr>"
-					+"<tr class='right-align'>"
-						+"<td colspan='2' class='border-top'>"
-							+"SEK <span id='totalCost'>" + String(model.getTotalMenuPrice()) + "</span>"
-						+"</td>"
-					+"</tr>";
-
 		this.menuContainer.html(dinnerString);
 
 
